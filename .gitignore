@@ -1,0 +1,53 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio cache/options
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider
+.idea/
+
+## Autogerados pelo sistema
+*.dbmdl
+*.bak
+*.backup
+*.mdf
+*.ldf
+
+## Pacotes
+*.nupkg
+*.snupkg
+packages/
+*.vsix
+
+## Arquivos de publish
+publish/
+out/
+
+## Arquivos temporários
+*.tmp
+*.temp
+*.log
+*.diff
+*.patch
+
+## Test results
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+
+## Arquivos de usuário
+*.swp
+*.DS_Store
+Thumbs.db
+
+## Dotnet tools
+dotnet-tools.json
