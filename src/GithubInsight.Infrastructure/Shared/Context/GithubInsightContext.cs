@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using GithubInsight.Infrastructure.Entities;
+using GithubInsight.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GithubInsight.Infrastructure.Shared.Context;
@@ -16,6 +16,8 @@ public partial class GithubInsightContext : DbContext
     {
     }
 
+    public virtual DbSet<AuthUser> AuthUsers { get; set; }
+
     public virtual DbSet<LanguageStat> LanguageStats { get; set; }
 
     public virtual DbSet<ReposCreatedPerYear> ReposCreatedPerYears { get; set; }
@@ -28,6 +30,22 @@ public partial class GithubInsightContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<AuthUser>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__AuthUser__3214EC07CA1341EF");
+
+            entity.ToTable("AuthUser");
+
+            entity.HasIndex(e => e.Username, "IX_AuthUser_Username");
+
+            entity.HasIndex(e => e.Username, "UQ__AuthUser__536C85E4C1BB152C").IsUnique();
+
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.PasswordHash).HasMaxLength(200);
+            entity.Property(e => e.UpdatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.Username).HasMaxLength(100);
+        });
+
         modelBuilder.Entity<LanguageStat>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Language__3214EC070DE7D57E");
