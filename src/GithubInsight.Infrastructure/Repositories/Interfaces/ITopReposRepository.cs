@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace GithubInsight.Infrastructure.Repositories.Interfaces
 {
-    public interface IStatsRepository
+    public interface ITopReposRepository
     {
-        Task AddStatsAsync(Stat stat);
-        Task<Stat> GetStatByUserAsync(string userLogin);
+        Task<List<TopRepo>> GetTopReposAsync(string userLogin);
     }
 }

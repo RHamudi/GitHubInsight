@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace GithubInsight.Infrastructure.Repositories.Interfaces
 {
-    public interface IStatsRepository
+    public interface ILanguagesRepository
     {
-        Task AddStatsAsync(Stat stat);
-        Task<Stat> GetStatByUserAsync(string userLogin);
+        Task<List<LanguageStat>> GetAllLanguagesByUser(string userLogin);
     }
 }
