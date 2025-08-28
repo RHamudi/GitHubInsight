@@ -20,8 +20,8 @@ namespace GithubInsight.API.Controllers
         private readonly ReadTopRepos _readTopReposReceiver;
         private readonly ReadLanguage _readLanguage;
 
-        public GithubInsightController(InsertUser insertReceiver, 
-            ReadStats readStatsReceiver, 
+        public GithubInsightController(InsertUser insertReceiver,
+            ReadStats readStatsReceiver,
             ReadTopRepos readTopRepos,
             ReadLanguage readLanguage)
         {
@@ -78,14 +78,16 @@ namespace GithubInsight.API.Controllers
                 {
                     message = stat.Message,
                 });
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return StatusCode(500, new { message = "Internal server error", error = ex.Message });
             }
         }
 
         [HttpGet("TopRepos/{username}")]
-        public IActionResult GetTopRepos(string username) {
+        public IActionResult GetTopRepos(string username)
+        {
             try
             {
                 var topRepos = _readTopReposReceiver.ExecuteAsync(username).Result;
@@ -108,12 +110,13 @@ namespace GithubInsight.API.Controllers
         }
 
         [HttpGet("Languages/{username}")]
-        public IActionResult GetLangugages(string username) {
+        public IActionResult GetLanguages(string username)
+        {
             try
             {
                 var languages = _readLanguage.ExecuteAsync(username).Result;
 
-                if(languages.StatusCode == 200)
+                if (languages.StatusCode == 200)
                 {
                     return Ok(languages);
                 }
@@ -122,9 +125,10 @@ namespace GithubInsight.API.Controllers
                 {
                     message = languages.Message,
                 });
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                return StatusCode(500, new {message = "Internal server error", error = ex.Message});
+                return StatusCode(500, new { message = "Internal server error", error = ex.Message });
             }
         }
     }
