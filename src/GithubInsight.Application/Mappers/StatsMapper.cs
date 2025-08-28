@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GithubInsight.Application.Mappers
 {
-    internal class StatsMapper
+    public class StatsMapper
     {
         public static StatDto ToDto(Stat stat)
         {
