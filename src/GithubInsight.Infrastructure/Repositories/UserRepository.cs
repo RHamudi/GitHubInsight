@@ -1,4 +1,4 @@
-﻿using GithubInsight.Infrastructure.Entities;
+﻿using GithubInsight.Domain.Entities;
 using GithubInsight.Infrastructure.Repositories.Interfaces;
 using GithubInsight.Infrastructure.Shared.Context;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +17,7 @@ namespace GithubInsight.Infrastructure.Repositories
         {
             _context = context;
         }
+
         public async Task<User> AddUserAsync(User user)
         {
             await _context.Users.AddAsync(user);
@@ -28,5 +29,6 @@ namespace GithubInsight.Infrastructure.Repositories
         {
             return await _context.Users.AnyAsync(u => u.Login == username);
         }
+
     }
 }

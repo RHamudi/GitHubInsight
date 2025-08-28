@@ -2,7 +2,7 @@
 using GithubInsight.Application.Mappers;
 using GithubInsight.Application.Services.APIGithub.Interfaces;
 using GithubInsight.Application.Services.Stats;
-using GithubInsight.Infrastructure.Entities;
+using GithubInsight.Domain.Entities;
 using GithubInsight.Infrastructure.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;

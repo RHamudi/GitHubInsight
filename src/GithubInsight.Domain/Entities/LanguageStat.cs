@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GithubInsight.Infrastructure.Entities;
+namespace GithubInsight.Domain.Entities;
 
 public partial class LanguageStat
 {

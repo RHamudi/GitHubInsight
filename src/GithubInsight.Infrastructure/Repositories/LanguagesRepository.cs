@@ -1,4 +1,4 @@
-﻿using GithubInsight.Infrastructure.Entities;
+﻿using GithubInsight.Domain.Entities;
 using GithubInsight.Infrastructure.Repositories.Interfaces;
 using GithubInsight.Infrastructure.Shared.Context;
 using Microsoft.EntityFrameworkCore;

@@ -1,5 +1,4 @@
 ﻿using GithubInsight.Application.Mappers;
-using GithubInsight.Infrastructure.Entities;
 using GithubInsight.Infrastructure.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
