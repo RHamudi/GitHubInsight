@@ -1,4 +1,7 @@
+using GithubInsight.Application.Receivers.LanguageReceiver;
 using GithubInsight.Application.Receivers.RepoReceiver;
+using GithubInsight.Application.Receivers.StatsReceiver;
+using GithubInsight.Application.Receivers.TopReposReceiver;
 using GithubInsight.Application.Receivers.UserReceiver;
 using GithubInsight.Application.Services.APIGithub;
 using GithubInsight.Application.Services.APIGithub.Interfaces;
@@ -22,8 +25,13 @@ builder.Services.AddScoped<GithubInsightContext>();
 builder.Services.AddScoped<IGithubService, GithubService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IStatsRepository, StatsRepository>();
+builder.Services.AddScoped<ITopReposRepository, TopReposRepository>();
+builder.Services.AddScoped<ILanguagesRepository,  LanguagesRepository>();
 builder.Services.AddScoped<InsertUser>();
 builder.Services.AddScoped<InsertStats>();
+builder.Services.AddScoped<ReadStats>();
+builder.Services.AddScoped<ReadTopRepos>();
+builder.Services.AddScoped<ReadLanguage>();
 builder.Services.AddHttpClient();
 var app = builder.Build();
 
