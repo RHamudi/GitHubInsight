@@ -38,11 +38,11 @@
 
 ## Endpoints principais
 
-POST /api/GithubInsight/AuthUser/{username} → autenticação e geração de token JWT.
-GET /api/GithubInsight/sync-user/{username} → busca informações de usuário no GitHub e Salva no Banco.
-GET /api/GithubInsight/stats/{username} → Obtém estatísticas de um usuário do GitHub
-GET /api/GithubInsight/TopRepos/{username} → Obtem os 5 repositórios mais populares de um usuário
-GET /api/GithubInsight/Languages/{username} → Obtém as linguagems mais utilizadas do usuario do Github.
+- POST /api/GithubInsight/AuthUser/{username} → autenticação e geração de token JWT.
+- GET /api/GithubInsight/sync-user/{username} → busca informações de usuário no GitHub e Salva no Banco.
+- GET /api/GithubInsight/stats/{username} → Obtém estatísticas de um usuário do GitHub
+- GET /api/GithubInsight/TopRepos/{username} → Obtem os 5 repositórios mais populares de um usuário
+- GET /api/GithubInsight/Languages/{username} → Obtém as linguagems mais utilizadas do usuario do Github.
 
 ## 🔹 Setup Instructions
 
